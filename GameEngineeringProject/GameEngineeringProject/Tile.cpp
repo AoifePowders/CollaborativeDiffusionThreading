@@ -1,6 +1,6 @@
 #include "Tile.h"
 
-Tile::Tile(Vector2 t_size, Vector2 t_pos) :
+Tile::Tile(Vector2 t_size, Vector2 t_pos, std::pair<int, int> t_cell) :
 	m_size(t_size),
 	m_pos(t_pos)
 {
@@ -8,6 +8,7 @@ Tile::Tile(Vector2 t_size, Vector2 t_pos) :
 	m_tile.h = m_size.y;
 	m_tile.x = (int)m_pos.x;
 	m_tile.y = (int)m_pos.y;
+	m_cell = t_cell;
 }
 
 Tile::~Tile()

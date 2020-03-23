@@ -6,6 +6,7 @@
 #include <iostream>
 #include "Map.h"
 #include "Player.h"
+#include "AIBot.h"
 
 class Game
 {
@@ -31,6 +32,7 @@ private:
 	bool m_exitGame; // control exiting game
 	Map* m_map;
 	Player* m_player;
+	AIBot* m_bot;
 	int mapSize = 30;
 };
 

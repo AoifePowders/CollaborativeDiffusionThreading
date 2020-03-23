@@ -45,6 +45,6 @@ void Player::Left()
 
 void Player::render(SDL_Renderer* t_window)
 {
-	SDL_SetRenderDrawColor(t_window, 255, 0, 0, 255);
+	SDL_SetRenderDrawColor(t_window, 0, 0, 255, 255);
 	SDL_RenderFillRect(t_window, &m_player);
 }

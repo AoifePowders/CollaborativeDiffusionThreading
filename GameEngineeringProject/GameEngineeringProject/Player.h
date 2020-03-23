@@ -19,10 +19,10 @@ public:
 	void render(SDL_Renderer* t_window);
 
 	std::pair<int, int> m_cell;
+	Vector2 m_pos;
 private:
 	SDL_Rect m_player;
 	Vector2 m_size;
-	Vector2 m_pos;
 	int m_mapSize;
 };
 

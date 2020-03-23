@@ -8,7 +8,7 @@ Map::Map(int t_size)
 
 		for (int x = 0; x < t_size; x++)
 		{
-			test.push_back(new Tile(Vector2(20, 20), Vector2(x * 20, y * 20)));
+			test.push_back(new Tile(Vector2(20, 20), Vector2(x * 20, y * 20), std::make_pair(y,x)));
 		}
 
 		m_map.push_back(test);

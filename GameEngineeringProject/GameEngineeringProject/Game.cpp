@@ -59,6 +59,7 @@ void Game::init(const char* title, int xPos, int yPos, int width, int height, bo
 	}
 
 	m_player = new Player(m_map->m_map[0][0]->getPosition(),20,std::make_pair(0,0), mapSize);
+	m_bot = new AIBot(m_map->m_map[2][2]->getPosition(), 20, std::make_pair(2, 2), mapSize, m_map);
 }
 
 /// handle user and system events/ input
@@ -124,6 +125,7 @@ void Game::processEvents()
 void Game::update()
 {
 	m_player->update(m_map->getTilePosition(m_player->m_cell));
+	m_bot->update(m_player->m_pos, m_map->getTilePosition(m_bot->m_cell));
 }
 
 /// draw the frame and then switch bufers
@@ -133,7 +135,7 @@ void Game::render()
 	//add stuff to render
 	m_map->render(renderer);
 	m_player->render(renderer);
-
+	m_bot->render(renderer);
 	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 
 	SDL_RenderPresent(renderer);
