@@ -14,8 +14,9 @@ public:
 	Game();
 	~Game();
 
-	void init(const char* title, int xPos, int yPos, int width, int height, bool fullscreen);
+	void init(const char* title, int xPos, int yPos, int width, int height, bool fullscreen, int t_mapSize);
 	void update();
+	void aiUpdate();
 
 	void processEvents();
 	void render();
@@ -32,8 +33,10 @@ private:
 	bool m_exitGame; // control exiting game
 	Map* m_map;
 	Player* m_player;
-	AIBot* m_bot;
-	int mapSize = 30;
+	std::vector<AIBot*> m_bot;
+
+	//change the size of the map here, (30x30, 100x100, 1000x1000)
+	int mapSize;
 };
 
 #endif // !GAME_H

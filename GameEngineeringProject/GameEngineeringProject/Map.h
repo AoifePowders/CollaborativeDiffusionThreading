@@ -11,7 +11,7 @@
 class Map
 {
 public:
-	Map(int t_size);
+	Map(int t_size, Vector2 t_screenSize);
 	~Map();
 	
 	void render(SDL_Renderer* t_window);

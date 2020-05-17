@@ -36,13 +36,14 @@ void AIBot::update(Vector2 t_playerpos, Vector2 t_pos)
 
 	count++;
 
-	if (count >= 10)
+	if (count >= 2000)
 	{
 		std::pair<int, int> m_target = findSmallestWeight(m_neighbours);
 		m_cell.first = m_target.first;
 		m_cell.second = m_target.second;
 
-		m_pos = t_pos;
+		m_pos = m_map->m_map[m_cell.first][m_cell.second]->getPosition();
+
 		m_bot.x = m_pos.x;
 		m_bot.y = m_pos.y;
 
